@@ -1,0 +1,53 @@
+<p>{{{polyglot "verifyAdmin" }}}</p>
+<p>{{{polyglot "scanFingerInstructions" }}}</p>
+<p>{{{polyglot "fingerSelectInstructions" }}}</p>
+<p>
+    <label for="Finger">{{{polyglot "Finger" }}}</label>
+    <select id="Finger" name="Finger">
+        <option value="0">Null</option>
+        <option value="6">{{{polyglot "L1" }}}</option>
+        <option value="7">{{{polyglot "L2" }}}</option>
+        <option value="8">{{{polyglot "L3" }}}</option>
+        <option value="9">{{{polyglot "L4" }}}</option>
+        <option value="10">{{{polyglot "L5" }}}</option>
+        <option selected="selected" value="1">{{{polyglot "R1" }}}</option>
+        <option value="2">{{{polyglot "R2" }}}</option>
+        <option value="3">{{{polyglot "R3" }}}</option>
+        <option value="4">{{{polyglot "R4" }}}</option>
+        <option value="5">{{{polyglot "R5" }}}</option>
+    </select>
+    <br/>
+    <label for="District">{{{polyglot "District" }}}</label>
+
+    <select id="District" name="District">
+        <option value=""> -- </option>
+      {{#each districts}}
+          <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+    <a data-role="button" id="identifyAdmin" class="btn btn-primary btn-lg ladda-button" data-style="expand-right"><span class="ladda-label">Scan</span></a>
+    <div id="uploadFailed">
+        <p id="uploadFailedMessage"></p>
+        <a data-role="button" id="continueAfterFail" class="btn btn-primary btn-lg ladda-button" data-style="expand-right"><span class="ladda-label">{{{polyglot "Continue" }}}</span></a>
+    </div>
+
+</p>
+
+<div id="message"></div>
+
+<p>{{{polyglot "scanSendLogs" }}}</p>
+<p>
+    <a data-role='button' class='btn btn-primary btn-lg' id='verifySendLogs'>{{{polyglot "sendLogs" }}}</a>
+</p>
+
+<div id="progress"></div>
+
+
+<!--<style shim-shadowdom>-->
+    <!--paper-progress::shadow #progressContainer {-->
+        <!--height:200%;-->
+        <!--width:200%;-->
+    <!--}-->
+<!--</style>-->
+
+<!--<paper-progress id="scan-progress"></paper-progress>-->

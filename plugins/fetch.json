@@ -1,0 +1,32 @@
+{
+    "com.plugins.shortcut": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jorgecis/ShortcutPlugin.git",
+            "subdir": "."
+        }
+    },
+    "com.iwanjunaid.pman": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/chrisekelley/pman",
+            "subdir": "."
+        }
+    },
+    "org.iwanjunaid.pman": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/chrisekelley/pman",
+            "subdir": "."
+        }
+    },
+    "de.appplant.cordova.plugin.local-notification": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/katzer/cordova-plugin-local-notifications",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

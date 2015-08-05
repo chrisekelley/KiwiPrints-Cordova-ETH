@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="org.rti.kiwi.eth" version="0.1.4" android-versionCode="14" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>KiwiPrintsETH</name>
+  <description>
+        A data collection application.
+    </description>
+  <author email="chris@vetula.com" href="http://kinotel.com">
+        Kiwi Developer
+    </author>
+  <content src="index.html"/>
+  <access origin="*"/>
+  <preference name="LoadUrlTimeoutValue" value="60000"/>
+</widget>
