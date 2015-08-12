@@ -291,6 +291,8 @@ class Sync extends Backbone.Model
           Coconut.debug "Form Replication Change: " + JSON.stringify info
         ).on('complete', (info)->
           Coconut.debug "Form Replication Complete: " + JSON.stringify info
+        ).on('error', (info)->
+          Coconut.debug "Form Replication Error: " + JSON.stringify info
         )
 
   fetchOrUpdate: (obj) =>

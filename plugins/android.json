@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CertificatesPlugin\"><param name=\"android-package\" value=\"de.martinreinhardt.cordova.plugins.CertificatesPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -176,6 +180,9 @@
             "PACKAGE_NAME": "org.rti.kiwi.tt"
         },
         "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "org.rti.kiwi.eth"
+        },
+        "cordova-plugin-certificates": {
             "PACKAGE_NAME": "org.rti.kiwi.eth"
         }
     },

@@ -14,7 +14,7 @@ matchResults = document.location.pathname.match(/^\/(.*)\/_design\/(.*?)\//);
 
 if (matchResults === null) {
     console.log('Configuring for Pouchdb');
-    Coconut.db_name = 'coconut';
+    Coconut.db_name = 'coconut-eth';
     Coconut.ddoc_name = 'coconut';
 } else {
     Coconut.db_name = matchResults[1];
@@ -35,7 +35,6 @@ Coconut.checkDevice = function() {
 }
 
 Coconut.checkDevice();
-
 
 Backbone.sync = BackbonePouch.sync({
     db: PouchDB(Coconut.db_name)

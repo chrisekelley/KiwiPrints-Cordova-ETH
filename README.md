@@ -37,6 +37,7 @@ Use platforms/android/bakeapp.sh to refresh the plugin when you change it.
     cordova plugin add https://github.com/Initsogar/cordova-webintent.git
     cordova plugin add /Users/chrisk/source/SecugenPlugin 
     cordova plugin add de.appplant.cordova.plugin.local-notification && cordova prepare
+    cordova plugin add cordova-plugin-certificates
 
 If you need to cleanup old versions of the app that had a different package, add "Uninstall Android Application from Cordova" plugin:
 

@@ -19,16 +19,29 @@
 
 package org.rti.kiwi.eth;
 
+import android.graphics.Color;
+import android.net.http.SslError;
 import android.os.Bundle;
 
 import org.apache.cordova.*;
+import org.apache.cordova.engine.SystemWebView;
+import org.apache.cordova.engine.SystemWebViewClient;
+import org.apache.cordova.engine.SystemWebViewEngine;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.os.Build;
+import android.view.ViewGroup;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 
 import java.io.File;
+
+import de.martinreinhardt.cordova.plugins.CertificatesCordovaWebViewClient;
+import de.martinreinhardt.cordova.plugins.CertsCordovaInterfaceImpl;
 
 
 public class KiwiPrints extends CordovaActivity
@@ -39,7 +52,9 @@ public class KiwiPrints extends CordovaActivity
 	@Override
     public void onCreate(Bundle savedInstanceState)
     {
-		int id = this.getApplicationContext().getResources().getIdentifier("APP_VERSION", "string", this.getPackageName());
+
+
+        int id = this.getApplicationContext().getResources().getIdentifier("APP_VERSION", "string", this.getPackageName());
 //		Log.d(TAG, "APP_VERSION id: " + id);
     	String appVersion = this.getApplicationContext().getResources().getString(id);
     	Log.d(TAG, "appVersion: " + appVersion);
@@ -96,12 +111,86 @@ public class KiwiPrints extends CordovaActivity
         }
     	
 		super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_test_cordova_with_layout);
+//        cordovaInterface = makeCordovaInterface();
+
         super.init();
-        
+
+        Log.d(TAG, "Setting app to allow self-signed certificates.");
+//        SystemWebViewEngine systemWebViewEngine = (SystemWebViewEngine) appView.getEngine();
+//        CertificatesCordovaWebViewClient cWebClient = new CertificatesCordovaWebViewClient(systemWebViewEngine);
+//        cWebClient.setAllowUntrusted(true);
+//        WebView webView = (WebView) systemWebViewEngine.getView();
+//        webView.clearCache(false);
+//        webView.setWebViewClient(cWebClient);
+////        webView.setWebChromeClient(cWebClient)
+
+//        CordovaWebView webView = super.appView.getView();
+//        webView.setWebViewClient(new WebViewClient() {
+//
+//            @Override
+//            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
+//                handler.proceed();
+//            }
+//        });
+
+
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html");
     }
+
+//    /**
+//     * Construct the default web view object.
+//     *
+//     * Override this to customize the webview that is used.
+//     */
+//    @Override
+//    protected CordovaWebView makeWebView() {
+//        return new CordovaWebViewImpl(makeWebViewEngine());
+//    }
+//
+//    @Override
+//    protected CordovaWebViewEngine makeWebViewEngine() {
+//        return CordovaWebViewImpl.createEngine(this, preferences);
+//    }
+
+//    kudos: http://www.catharinegeek.com/embed-cordova-webview-in-android-native-app/
+//    @Override
+//    protected CordovaWebView makeWebView() {
+//        SystemWebView webView = (SystemWebView)findViewById(R.id.cordovaWebView);
+//        SystemWebViewEngine parentEngine = new SystemWebViewEngine(webView);
+//        CertificatesCordovaWebViewClient cWebClient = new CertificatesCordovaWebViewClient(parentEngine);
+////        webView.setWebViewClient(cWebClient);
+//        webView.setWebViewClient(new SystemWebViewClient(parentEngine) {
+//
+//            @Override
+//            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
+//                Log.d(TAG, "onReceivedSslError. Proceeding. " );
+//                handler.proceed();
+//            }
+//        });
+//        return new CordovaWebViewImpl(parentEngine);
+//    }
+
+//    @Override
+//    protected void createViews() {
+//        //Why are we setting a constant as the ID? This should be investigated
+////        appView.getView().setId(100);
+////        appView.getView().setLayoutParams(new FrameLayout.LayoutParams(
+////                ViewGroup.LayoutParams.MATCH_PARENT,
+////                ViewGroup.LayoutParams.MATCH_PARENT));
+////
+////        setContentView(appView.getView());
+//
+//        if (preferences.contains("BackgroundColor")) {
+//            int backgroundColor = preferences.getInteger("BackgroundColor", Color.BLACK);
+//            // Background of activity:
+//            appView.getView().setBackgroundColor(backgroundColor);
+//        }
+//
+//        appView.getView().requestFocusFromTouch();
+//    }
 	
 	public void clearApplicationData() {
 	       File cache = getCacheDir();

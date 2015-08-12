@@ -439,7 +439,7 @@ class Router extends Backbone.Router
           langChoice = user.get('langChoice')
           console.log("langChoice from doc: " + user.get('langChoice'))
           if !langChoice
-            langChoice = 'pt'
+            langChoice = 'en'
             user.set('langChoice',langChoice)
             user.save null,
               success: ->
@@ -474,6 +474,7 @@ class Router extends Backbone.Router
     Backbone.history.start()
     if Coconut.isMobile == true
       CoconutUtils.scheduleCheckVersion()
+#      cordova.plugins.certificates.trustUnsecureCerts(true)
       cordova.plugins.notification.local.on "trigger", (notification) ->
         console.log("triggered: " + notification.id);
         CoconutUtils.checkVersion()

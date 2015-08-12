@@ -415,6 +415,8 @@ Sync = (function(superClass) {
       return Coconut.debug("Form Replication Change: " + JSON.stringify(info));
     }).on('complete', function(info) {
       return Coconut.debug("Form Replication Complete: " + JSON.stringify(info));
+    }).on('error', function(info) {
+      return Coconut.debug("Form Replication Error: " + JSON.stringify(info));
     });
   };
 

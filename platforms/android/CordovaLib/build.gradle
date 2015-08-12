@@ -54,10 +54,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_6
     }
 
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-    }
-
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'

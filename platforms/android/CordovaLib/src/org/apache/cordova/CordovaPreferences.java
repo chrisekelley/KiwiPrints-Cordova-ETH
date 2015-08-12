@@ -65,11 +65,6 @@ public class CordovaPreferences {
         return defaultValue;
     }
 
-    // Added in 4.0.0
-    public boolean contains(String name) {
-        return getString(name, null) != null;
-    }
-
     public int getInteger(String name, int defaultValue) {
         name = name.toLowerCase(Locale.ENGLISH);
         String value = prefs.get(name);
@@ -85,7 +80,7 @@ public class CordovaPreferences {
         String value = prefs.get(name);
         if (value != null) {
             return Double.valueOf(value);
-        }
+        } 
         return defaultValue;
     }
 
@@ -94,7 +89,7 @@ public class CordovaPreferences {
         String value = prefs.get(name);
         if (value != null) {
             return value;
-        }
+        } 
         return defaultValue;
     }
 

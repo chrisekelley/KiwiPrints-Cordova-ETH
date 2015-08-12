@@ -118,6 +118,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-certificates/www/certificate.js",
+        "id": "cordova-plugin-certificates.Certificates",
+        "clobbers": [
+            "cordova.plugins.certificates"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -279,6 +286,7 @@ module.exports.metadata =
     "org.apache.cordova.plugin.version": "0.2.0",
     "org.iwanjunaid.pman": "0.1.2",
     "de.appplant.cordova.plugin.local-notification": "0.8.2dev",
+    "cordova-plugin-certificates": "0.5.0",
     "org.apache.cordova.file": "1.3.3"
 }
 // BOTTOM OF METADATA
